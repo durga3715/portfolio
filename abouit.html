@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>my portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        *{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
 
-         <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-container {
+        padding: 20px;
+    }
     
-           
+    .contact-form {
+        gap: 12px;
+    }
+}
 
-            body{
-                color:white;
-            }
-            .header
-            {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                padding: 20px 10%;
-                background: transparent;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                z-index: 100;
-            }
-            .logo
-            {
-                position: relative;
-                font-size: 25px;
-                color: #fff;
-                text-decoration: none;
-                font-weight: 000;
-            }
-            .navbar a{
-                display: inline-block;
-                font-size: 25px;
-                color: #fff;
-                text-decoration: none;
-                font-weight: 500;
-                margin-left: 35px;
-                transition: .3s;
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form action="#" method="POST" class="contact-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
 
-            }
-            .navbar a:hover
-            {
-                color: #0ef;
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <label> Phone Number</label>
+            <input type="number" id="number" name="number" required>
 
-            }
-            .home
-            {
-                position: relative;
-                width: 100%;
-                justify-content: space-between;
-                height: 100vh;
-                background-size:cover;
-                background: url(data:image/jpeg;base64,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) no-repeat;
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-                background-position: center;
-                display: flex;
-                align-items: center;
-                padding: 70px 10% 0;
-
-            }
-
-         </style> 
-           </head>
-         <body style="background-color: rgb(132,102,102)">
-            <header class="header">
-                <a href="#" class="logo">portfolio</a>
-                <nav class="navbar">
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Skill</a>
-                    <a href="#">Contact</a>
-                </nav>
-            </header>
-            <section class="home">
-                <div class="home.content">
-                    <h1>
-                        hello it's me 
-                    </h1>
-                    <h1> PRIYA</h1>
-                    <p> I am a web designer with extensive expeerience foe over 
-                        <br> expertise is to create and website design
-                    </p>
-                    <div class="home.sci"></div>
-                </div>
-
-            </section>
-
-         </body>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</body>
 </html>
